@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} child_templates {% endblock %}
+
+{% block sidebar %}
+{{ block.super }}
+<ul>
+    <li><a href="/todos/">todos_home</a></li>
+</ul>
+{% endblock %}

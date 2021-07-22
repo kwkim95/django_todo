@@ -1,0 +1,9 @@
+{% extends "base_todos.html" %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h3>{{ todo.title }} delete</h3>
+        <input type="submit" value="delete">
+        <input type="button" value="back" onClick="history.go(-1)">
+    </form>
+{% endblock %}

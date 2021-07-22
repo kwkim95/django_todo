@@ -1,0 +1,17 @@
+{% extends "base_todos.html" %}
+{% block content %}
+    <h1>todo list practice</h1>
+    <a href="{% url 'todos:add' %}">add</a>
+    {% if todo_list %}
+        <ul>
+        {% for todo in todo_list %}
+            <li><a href="{% url 'todos:detail' todo.id %}">{{ todo.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No todos are available.</p>
+    {% endif %}
+{% endblock %}
+
+
+

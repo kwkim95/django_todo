@@ -1,0 +1,12 @@
+{% extends "base_todos.html" %}
+{% block content %}
+    {% csrf_token %}
+    <legend><h1>{{ todo.title }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <p>{{ todo.contents }} </p>
+    <p>{{ todo.todo_date }} </p>
+
+    <a href="/todos/{{todo.id}}/remove">delete</a>
+    <a href="/todos/{{todo.id}}/update">update</a>
+    <a href="{% url 'todos:index' %}">back</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base_todos.html" %}
+{% block content %}
+    <form action="{% url 'todos:add' %}" method="POST">
+        {% csrf_token %}
+        <label for="title">title :</label>
+        <input type="text" id="title" name="title" placeholder="title"
+               maxlength="50" size="50">
+        <br />
+        <label for="contents">contents :</label>
+        <input type="text" id="contents" name="contents" placeholder="contents"
+               maxlength="200" size="50">
+        <br />
+        <input type="submit" value="add">
+        <input type="button" value="back" onClick="history.go(-1)">
+
+    </form>
+{% endblock %}
